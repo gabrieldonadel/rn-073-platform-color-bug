@@ -8,6 +8,8 @@
 import React from 'react';
 import type {PropsWithChildren} from 'react';
 import {
+  DynamicColorIOS,
+  PlatformColor,
   SafeAreaView,
   ScrollView,
   StatusBar,
@@ -71,6 +73,25 @@ function App(): React.JSX.Element {
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
+        <Text
+          style={{
+            fontSize: 24,
+            fontWeight: '600',
+            color: PlatformColor('labelColor'),
+          }}>
+          TEST
+        </Text>
+        <Text
+          style={{
+            fontSize: 24,
+            fontWeight: '600',
+            color: DynamicColorIOS({
+              dark: '#FF0000',
+              light: '#00F000',
+            }),
+          }}>
+          TEST
+        </Text>
         <Header />
         <View
           style={{
